@@ -1,0 +1,412 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+.container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+.gameArea {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 65.7vw;
+  height: 100vh;
+  padding-bottom: 8vh;
+  background: url("img/hubert/h (1).png") no-repeat center/cover;
+  background-size: cover;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 0 0 1px #000;
+}
+.gameArea .questions {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+.gameArea .questions .questionContainer {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.gameArea .questions .questionContainer .question {
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 70%;
+  height: 100px;
+  padding: 0 12px;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  background: linear-gradient(
+    to right,
+    #07417a 0%,
+    #0a74be 25%,
+    #063385 50%,
+    #0a74be 75%,
+    #07417a 100%
+  );
+  text-align: center;
+  text-shadow: 0 0 1px #000;
+}
+.gameArea .questions .questionContainer .question:after,
+.gameArea .questions .questionContainer .question:before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  top: 9.8px;
+  width: 70.71067px;
+  height: 70.71067px;
+  -webkit-transform: rotateZ(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotateZ(45deg);
+}
+.gameArea .questions .questionContainer .question:before {
+  top: 9.5px;
+  left: -35.35px;
+  background: linear-gradient(
+    225deg,
+    transparent 0%,
+    transparent 50%,
+    #07417a 50%,
+    #023c75 100%
+  );
+  border-left: 7px solid white;
+  border-bottom: 7px solid white;
+}
+.gameArea .questions .questionContainer .question:after {
+  right: -35.35px;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 50%,
+    #07417a 50%,
+    #023c75 100%
+  );
+  border-right: 7px solid white;
+  border-top: 7px solid white;
+}
+.gameArea .colorLineLeft,
+.gameArea .colorLineRight,
+.gameArea .colorLineShort {
+  height: 5px;
+  background-color: white;
+}
+.gameArea .colorLineRight {
+  width: 15%;
+}
+.gameArea .colorLineLeft {
+  width: 15%;
+}
+.gameArea .colorLineShort {
+  width: 10%;
+}
+.gameArea .answers {
+  width: 100%;
+}
+.gameArea .answers .answerLine {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+.gameArea .answers .answerLine:first-child {
+  margin-bottom: 15px;
+}
+.gameArea .answers .answerLine .answer {
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 45%;
+  height: 60px;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  background: linear-gradient(
+    to right,
+    #07417a 0%,
+    #0a74be 25%,
+    #075597 50%,
+    #0a74be 75%,
+    #07417a 100%
+  );
+}
+.gameArea .answers .answerLine .answer:hover {
+  cursor: pointer;
+  font-size: 25px;
+}
+.gameArea .answers .answerLine .answer:after,
+.gameArea .answers .answerLine .answer:before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  top: 3.49px;
+  width: 42px;
+  height: 43px;
+  -webkit-transform: rotateZ(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotateZ(45deg);
+}
+.gameArea .answers .answerLine .answer:before {
+  top: 3.46px;
+  left: -21px;
+  background: linear-gradient(
+    225deg,
+    transparent 0%,
+    transparent 50%,
+    #07417a 50%,
+    #043e77 100%
+  );
+  border-left: 7.5px solid white;
+  border-bottom: 7.5px solid white;
+}
+.gameArea .answers .answerLine .answer:after {
+  right: -21px;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 50%,
+    #07417a 50%,
+    #043e77 100%
+  );
+  border-right: 7.5px solid white;
+  border-top: 7.5px solid white;
+}
+.gameArea .answers .answerLine .answer span:first-child {
+  padding-right: 8px;
+  padding-left: 8px;
+  color: #e3ae36;
+  text-shadow: 0 0 0 transparent;
+}
+.gameArea .answers .answerLine .answerChecked {
+  color: #000;
+  background: linear-gradient(
+    to right,
+    #de9710 0%,
+    #dcae23 25%,
+    #d4be2a 50%,
+    #dcae23 75%,
+    #de9710 100%
+  );
+}
+.gameArea .answers .answerLine .answerChecked:before {
+  background: linear-gradient(
+    225deg,
+    transparent 0%,
+    transparent 50%,
+    #de9710 50%,
+    #cd8600 100%
+  );
+}
+.gameArea .answers .answerLine .answerChecked:after {
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 50%,
+    #de9710 50%,
+    #cd8600 100%
+  );
+}
+.gameArea .answers .answerLine .answerChecked span:first-child {
+  color: #fff;
+}
+.gameArea .answers .answerLine .answerCorrect {
+  color: #fff;
+  background: linear-gradient(
+    to right,
+    #4a8805 0%,
+    #77b307 25%,
+    #c2e145 50%,
+    #77b307 75%,
+    #4a8805 100%
+  );
+}
+.gameArea .answers .answerLine .answerCorrect:before {
+  background: linear-gradient(
+    225deg,
+    transparent 0%,
+    transparent 50%,
+    #4a8805 50%,
+    #608615 100%
+  );
+}
+.gameArea .answers .answerLine .answerCorrect:after {
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 50%,
+    #4a8805 50%,
+    #608615 100%
+  );
+}
+.gameArea .answers .answerLine .answerCorrect span:first-child {
+  color: #000;
+}
+.helpers {
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 34.3vw;
+  height: 100vh;
+  padding: 0 3%;
+  border-left: 8px solid #3196cc;
+  background: linear-gradient(45deg, #132590 0%, #013169 50%, #0c115d 100%);
+  font-weight: 700;
+  font-size: 28px;
+  color: #f3a17c;
+  text-shadow: 0 0 1px #000;
+}
+.helpers .lifelines {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 20vh;
+}
+.helpers .lifelines .lifeline {
+  opacity: 0;
+  width: 25%;
+  margin-right: 10%;
+  transition: all 0.3s;
+}
+.helpers .lifelines .lifeline:hover {
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 27%;
+}
+.helpers .lifelines .lifeline.showed {
+  opacity: 1;
+}
+.helpers .rewards {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 60vh;
+}
+.helpers .rewards .rewardLine {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 6px 0;
+}
+.helpers .rewards .rewardLine .lp {
+  width: 30px;
+  text-align: right;
+  text-shadow: 0 0 1px #000;
+}
+.helpers .rewards .rewardLine .point {
+  color: #fff;
+  opacity: 0;
+  width: 50px;
+  font-size: 10px;
+  text-align: center;
+}
+.helpers .rewards .rewardLine .point i {
+  -webkit-transform: rotateZ(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotateZ(45deg);
+}
+.helpers .rewards .rewardLine .reward {
+  width: calc(90% - 80px);
+  text-align: right;
+}
+.helpers .rewards .rewardActualLine {
+  background: linear-gradient(
+    to right,
+    #f99324 0%,
+    #f2a437 25%,
+    #f9be5a 50%,
+    #f2a437 75%,
+    #f99324 100%
+  );
+}
+.helpers .rewards .rewardActualLine .lp {
+  text-shadow: 0 0 3px #000;
+}
+.helpers .rewards .rewardActualLine .point {
+  text-shadow: 0 0 10px #fff;
+}
+.helpers .rewards .rewardActualLine .reward {
+  text-shadow: 0 0 3px #000;
+}
+.helpers .rewards .rewardWhite {
+  color: #fff;
+}
+.helpers .endGame {
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.helpers .endGame:hover {
+  font-size: 29px;
+  cursor: pointer;
+  color: #fff;
+}
