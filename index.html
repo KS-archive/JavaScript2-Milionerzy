@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Milionerzy</title>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://use.fontawesome.com/2360597828.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="gameArea">
+			<div class="questions">
+				<div class="questionContainer">
+					<div class="colorLineLeft"></div>
+					<div class="question" id="question"></div>
+					<div class="colorLineRight"></div>
+				</div>
+				<div class="answers">
+					<div class="answerLine">
+						<div class="colorLineLeft"></div>
+						<div class="answer" id="a"><span>A: </span><span></span></div>
+						<div class="colorLineShort"></div>
+						<div class="answer" id="b"><span>B: </span><span></span></div>
+						<div class="colorLineRight"></div>
+					</div>
+					<div class="answerLine">
+						<div class="colorLineLeft"></div>
+						<div class="answer" id="c"><span>C: </span><span></span></div>
+						<div class="colorLineShort"></div>
+						<div class="answer" id="d"><span>D: </span><span></span></div>
+						<div class="colorLineRight"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="helpers">
+			<div class="lifelines">
+				<img class="lifeline" src="img/circles/circle1.png">
+				<img class="lifeline" src="img/circles/circle2.png">
+				<img class="lifeline" src="img/circles/circle3.png">
+			</div>
+			<div class="rewards">
+				<div class="rewardLine rewardWhite">
+					<div class="lp">12</div>
+					<div class="point"><i class="fa fa-square" aria-hidden="true"></i></div>
+					<div class="reward">1 000 000 zł</div>
+				</div>
+				<div class="rewardLine">
+					<div class="lp">11</div>
+					<div class="point"><i class="fa fa-square" aria-hidden="true"></i></div>
+					<div class="reward">500 000 zł</div>
+				</div>
+				<div class="rewardLine">
+					<div class="lp">10</div>
+					<div class="point"><i class="fa fa-square" aria-hidden="true"></i></div>
+					<div class="reward">250 000 zł</div>
+				</div>
+				<div class="rewardLine">
+					<div class="lp">9</div>
+					<div class="point"><i class="fa fa-square" aria-hidden="true"></i></div>
+					<div class="reward">125 000 zł</div>
+				</div>
+				<div class="rewardLine">
+					<div class="lp">8</div>
+					<div class="point"><i class="fa fa-square" aria-hidden="true"></i></div>
+					<div class="reward">75 000 zł</div>
+				</div>
+				<div class="rewardLine rewardWhite">
+					<div class="lp">7</div>
+					<div class="point"><i class="fa fa-square" aria-hidden="true"></i></div>
+					<div class="reward">40 000 zł</div>
+				</div>
+				<div class="rewardLine">
+					<div class="lp">6</div>
+					<div class="point"><i class="fa fa-square" aria-hidden="true"></i></div>
+					<div class="reward">20 000 zł</div>
+				</div>
+				<div class="rewardLine">
+					<div class="lp">5</div>
+					<div class="point"><i class="fa fa-square" aria-hidden="true"></i></div>
+					<div class="reward">10 000 zł</div>
+				</div>
+				<div class="rewardLine">
+					<div class="lp">4</div>
+					<div class="point"><i class="fa fa-square" aria-hidden="true"></i></div>
+					<div class="reward">5000 zł</div>
+				</div>
+				<div class="rewardLine">
+					<div class="lp">3</div>
+					<div class="point"><i class="fa fa-square" aria-hidden="true"></i></div>
+					<div class="reward">2000 zł</div>
+				</div>
+				<div class="rewardLine rewardWhite">
+					<div class="lp">2</div>
+					<div class="point"><i class="fa fa-square" aria-hidden="true"></i></div>
+					<div class="reward">1000 zł</div>
+				</div>
+				<div class="rewardLine">
+					<div class="lp">1</div>
+					<div class="point"><i class="fa fa-square" aria-hidden="true"></i></div>
+					<div class="reward">500 zł</div>
+				</div>
+			</div>
+			<div class="endGame">Wycofaj się</div>
+		</div>
+	</div>
+	<div style="visibility: hidden;">
+		<audio id="fifty-fifty" src="audio/50_50.mp3"></audio>
+		<audio id="audience1" src="audio/publicznosc-start.mp3"></audio>
+		<audio id="audience2" src="audio/publicznosc-petla.mp3"></audio>
+		<audio id="audience3" src="audio/publicznosc-end.mp3"></audio>
+		<audio class="phone" id="phone1" src="audio/telefon-start.mp3"></audio>
+		<audio class="phone" id="phone2" src="audio/telefon-petla.mp3"></audio>
+		<audio class="phone" id="phone3" src="audio/telefon-end.mp3"></audio>
+		<audio id="bad_ans" src="audio/falsch.mp3"></audio>
+		<audio id="load_lifeline1" src="audio/joker_1.mp3"></audio>
+		<audio id="load_lifeline2" src="audio/joker_2.mp3"></audio>
+		<audio id="load_lifeline3" src="audio/joker_3.mp3"></audio>
+		<audio id="choice_start" src="audio/eingeloggt_start.mp3"></audio>
+		<audio id="choice_loop" src="audio/eingeloggt_loop.mp3"></audio>
+		<audio id="correct_ans" src="audio/correct.mp3"></audio>
+		<audio id="milion" src="audio/milion.mp3"></audio>
+		<audio id="resignation" src="audio/wycofanie.mp3"></audio>
+		<audio class="background" src="audio/background (1).mp3"></audio>
+		<audio class="background" src="audio/background (2).mp3"></audio>
+		<audio class="background" src="audio/background (3).mp3"></audio>
+	</div>
+</body>
+</html>
