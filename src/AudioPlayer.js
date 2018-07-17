@@ -28,6 +28,14 @@ class AudioPlayer {
             background: document.querySelectorAll('.tlo'),
         }
     }
+
+    play = (name, key) => {
+      if (key || key === 0) {
+        this.sounds[name][key].play();
+      } else {
+        this.sounds[name].play();
+      }
+    };
 }
 
 export default AudioPlayer;

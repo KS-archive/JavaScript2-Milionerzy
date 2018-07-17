@@ -15,7 +15,7 @@ class Game {
     }
 
     start = () => {
-        console.log('Game started!');
+        this.lifelines.initialize();
     };
 }
 

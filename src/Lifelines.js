@@ -1,13 +1,26 @@
-class Lifelines {
-    constructor() {
-        const lifelinesList = document.querySelectorAll('.lifeline');
+import AudioPlayer from './AudioPlayer';
 
-        this.lifelines = {
-            fiftyFifty: lifelinesList[0],
-            askTheAudience: lifelinesList[1],
-            phoneAFriend: lifelinesList[2],
-        };
-    }
+class Lifelines {
+  constructor() {
+    const lifelinesList = document.querySelectorAll('.lifeline');
+
+    this.lifelines = {
+      fiftyFifty: lifelinesList[0],
+      askTheAudience: lifelinesList[1],
+      phoneAFriend: lifelinesList[2],
+    };
+
+    this.audio = new AudioPlayer();
+  }
+
+  initialize = () => {
+    Object.keys(this.lifelines).map((key, i) => {
+      setTimeout(() => {
+        this.lifelines[key].classList.add('showed');
+        this.audio.play('loadLifeline', key);
+      }, i * 1000);
+    });
+  };
 }
 
 export default Lifelines;
