@@ -1,98 +1,100 @@
 export default [
-    {
-        pytanie: 'Skąd pochodzi Conan Barbarzyńca?',
-        odpowiedzA: 'z Rivii',
-        odpowiedzB: 'z Oz',
-        odpowiedzC: 'z Mordoru',
-        odpowiedzD: 'z Cimmerii',
-        poprawna: 'D'
-    },
-    {
-        pytanie: 'Odrażający drab z Kabaretu Starszych Panów dubeltówkę weźmie, wyjdzie i...',
-        odpowiedzA: 'rach-ciach!',
-        odpowiedzB: 'buch, buch!',
-        odpowiedzC: 'z rur dwóch',
-        odpowiedzD: 'bum w brzuch',
-        poprawna: 'B'
-    },
-    {
-        pytanie: 'Komiksowym "dzieckiem" rysownika Boba Kane\'a jest',
-        odpowiedzA: 'Superman',
-        odpowiedzB: 'Batman',
-        odpowiedzC: 'Spider-Man',
-        odpowiedzD: 'Captain America',
-        poprawna: 'B'
-    },
-    {
-        pytanie: 'Rybą nie jest',
-        odpowiedzA: 'świnka',
-        odpowiedzB: 'rozpiór',
-        odpowiedzC: 'krasnopiórka',
-        odpowiedzD: 'kraska',
-        poprawna: 'D'
-    },
-    {
-        pytanie: 'Kto jest mistrzem tego samego oręża, w jakim specjalizowała się mitologiczna Artemida?',
-        odpowiedzA: 'Zorro',
-        odpowiedzB: 'Legolas',
-        odpowiedzC: 'Don Kichot',
-        odpowiedzD: 'Longinus Podbipięta',
-        poprawna: 'B'
-    },
-    {
-        pytanie: 'Który aktor urodził się w roku opatentowania kinematografu braci Lumière?',
-        odpowiedzA: 'Rudolph Valentino',
-        odpowiedzB: 'Humphrey Bogart',
-        odpowiedzC: 'Charlie Chaplin',
-        odpowiedzD: 'Fred Astaire',
-        poprawna: 'A'
-    },
-    {
-        pytanie: 'Mowa w obronie poety Archiasza przeszła do historii jako jeden z najświetniejszych popisów retorycznych',
-        odpowiedzA: 'Izokratesa',
-        odpowiedzB: 'Cycerona',
-        odpowiedzC: 'Demostenesa',
-        odpowiedzD: 'Kwintyliana',
-        poprawna: 'B'
-    },
-    {
-        pytanie: 'Kto był nadwornym malarzem króla Filipa IV Habsburga?',
-        odpowiedzA: 'Marcello Bacciarelli',
-        odpowiedzB: 'Jan van Eyck',
-        odpowiedzC: 'Diego Velázquez',
-        odpowiedzD: 'Jacques-Louis David',
-        poprawna: 'C'
-    },
-    {
-        pytanie: 'Likier maraskino produkuje się z maraski, czyli odmiany',
-        odpowiedzA: 'wiśni',
-        odpowiedzB: 'jabłoni',
-        odpowiedzC: 'figi',
-        odpowiedzD: 'gruszy',
-        poprawna: 'A'
-    },
-    {
-        pytanie: 'Z gry na jakim instrumencie słynie Czesław Mozil?',
-        odpowiedzA: 'na kornecie',
-        odpowiedzB: 'na akordeonie',
-        odpowiedzC: 'a djembe',
-        odpowiedzD: 'na ksylofonie',
-        poprawna: 'B'
-    },
-    {
-        pytanie: 'Który utwór Juliusza Słowackiego napisany jest prozą?',
-        odpowiedzA: '"Godzina myśli"',
-        odpowiedzB: '"W Szwajcarii"',
-        odpowiedzC: '"Anhelli"',
-        odpowiedzD: '"Arab"',
-        poprawna: 'C'
-    },
-    {
-        pytanie: 'Płetwą grzbietową nie pruje wody',
-        odpowiedzA: 'długoszpar',
-        odpowiedzB: 'kosogon',
-        odpowiedzC: 'orka',
-        odpowiedzD: 'wal grenlandzki',
-        poprawna: 'D'
-    }
+  {
+    question: 'Skąd pochodzi Conan Barbarzyńca?',
+    a: 'z Rivii',
+    b: 'z Oz',
+    c: 'z Mordoru',
+    d: 'z Cimmerii',
+    correctAns: 'd',
+  },
+  {
+    question: 'Odrażający drab z Kabaretu Starszych Panów dubeltówkę weźmie, wyjdzie i...',
+    a: 'rach-ciach!',
+    b: 'buch, buch!',
+    c: 'z rur dwóch',
+    d: 'bum w brzuch',
+    correctAns: 'b',
+  },
+  {
+    question: 'Komiksowym "dzieckiem" rysownika Boba Kane\'a jest',
+    a: 'Superman',
+    b: 'Batman',
+    c: 'Spider-Man',
+    d: 'Captain America',
+    correctAns: 'b',
+  },
+  {
+    question: 'Rybą nie jest',
+    a: 'świnka',
+    b: 'rozpiór',
+    c: 'krasnopiórka',
+    d: 'kraska',
+    correctAns: 'd',
+  },
+  {
+    question:
+      'Kto jest mistrzem tego samego oręża, w jakim specjalizowała się mitologiczna Artemida?',
+    a: 'Zorro',
+    b: 'Legolas',
+    c: 'Don Kichot',
+    d: 'Longinus Podbipięta',
+    correctAns: 'b',
+  },
+  {
+    question: 'Który aktor urodził się w roku opatentowania kinematografu braci Lumière?',
+    a: 'Rudolph Valentino',
+    b: 'Humphrey Bogart',
+    c: 'Charlie Chaplin',
+    d: 'Fred Astaire',
+    correctAns: 'a',
+  },
+  {
+    question:
+      'Mowa w obronie poety Archiasza przeszła do historii jako jeden z najświetniejszych popisów retorycznych',
+    a: 'Izokratesa',
+    b: 'Cycerona',
+    c: 'Demostenesa',
+    d: 'Kwintyliana',
+    correctAns: 'b',
+  },
+  {
+    question: 'Kto był nadwornym malarzem króla Filipa IV Habsburga?',
+    a: 'Marcello Bacciarelli',
+    b: 'Jan van Eyck',
+    c: 'Diego Velázquez',
+    d: 'Jacques-Louis David',
+    correctAns: 'c',
+  },
+  {
+    question: 'Likier maraskino produkuje się z maraski, czyli odmiany',
+    a: 'wiśni',
+    b: 'jabłoni',
+    c: 'figi',
+    d: 'gruszy',
+    correctAns: 'a',
+  },
+  {
+    question: 'Z gry na jakim instrumencie słynie Czesław Mozil?',
+    a: 'na kornecie',
+    b: 'na akordeonie',
+    c: 'a djembe',
+    d: 'na ksylofonie',
+    correctAns: 'b',
+  },
+  {
+    question: 'Który utwór Juliusza Słowackiego napisany jest prozą?',
+    a: '"Godzina myśli"',
+    b: '"W Szwajcarii"',
+    c: '"Anhelli"',
+    d: '"Arab"',
+    correctAns: 'c',
+  },
+  {
+    question: 'Płetwą grzbietową nie pruje wody',
+    a: 'długoszpar',
+    b: 'kosogon',
+    c: 'orka',
+    d: 'wal grenlandzki',
+    correctAns: 'd',
+  },
 ];
