@@ -42,14 +42,41 @@ class AudioPlayer {
   };
 
   playBackgroundMusic = () => {
-    this.currentBackground.loop = false;
-    this.currentBackground.pause();
-
     const randomNumber = _.random(2);
     this.currentBackground = this.sounds.background[randomNumber];
 
     this.currentBackground.loop = true;
     this.currentBackground.play();
+  };
+
+  pauseBackgroundMusic = () => {
+    this.currentBackground.pause();
+  };
+
+  startChoice = () => {
+    this.pauseBackgroundMusic();
+    this.sounds.choice.start.play();
+    window.setTimeout(() => {
+      if (this.sounds.correctAns.paused && this.sounds.badAns.paused) {
+        this.sounds.choice.loop.loop = true;
+        this.sounds.choice.loop.play();
+      }
+    }, 2500);
+  };
+
+  endChoice = () => {
+    this.sounds.choice.start.pause();
+    this.sounds.choice.loop.pause();
+
+    const interval = setInterval(() => {
+      if (!this.sounds.choice.loop.paused) {
+        this.sounds.choice.loop.pause();
+      }
+    }, 100);
+
+    setTimeout(() => {
+      clearInterval(interval);
+    }, 2500);
   };
 }
 

@@ -53,23 +53,29 @@ class Questions {
 
       this.checkAnswer(e.currentTarget.id);
     } else {
+      this.audio.startChoice();
       _.map(this.answers, answer => answer.container.setAttribute('class', 'answer'));
       e.currentTarget.classList.add('answerChecked');
     }
   };
 
   checkAnswer = id => {
+    this.audio.endChoice();
+
     const correctAnswer = this.answers[this.currentQuestion.correctAns];
     correctAnswer.container.classList.remove('answerChecked');
     correctAnswer.container.classList.add('answerCorrect');
 
     if (id === this.currentQuestion.correctAns) {
       if (this.currentQuestionIndex !== 12) {
-        window.setTimeout(this.prepareToNextQuestion, 3000);
+        this.audio.play('correctAns');
+        window.setTimeout(this.prepareToNextQuestion, 7500);
       } else {
+        this.audio.play('milion');
         alert('You win!');
       }
     } else {
+      this.audio.play('badAns');
       alert('You loose');
     }
   };
