@@ -84,9 +84,15 @@ class Questions {
   };
 
   prepareToNextQuestion = () => {
-    _.map(this.answers, answer => answer.container.setAttribute('class', 'answer'));
+    _.map(this.answers, answer => {
+      answer.container.setAttribute('class', 'answer');
+      answer.letter.style.opacity = 1;
+      answer.content.style.opacity = 1;
+    });
     this.askQuestion();
   };
+
+  getBadAnswers = () => _.omit(this.answers, this.currentQuestion.correctAns);
 }
 
 export default Questions;

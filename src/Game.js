@@ -17,7 +17,7 @@ class Game {
   start = url => {
     axios.get(url).then(res => {
       this.questions = new Questions(res.data);
-      this.lifelines.initialize();
+      this.lifelines.initialize(this.questions);
       this.questions.askQuestion();
     });
   };
