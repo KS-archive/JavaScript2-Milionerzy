@@ -25,13 +25,11 @@ class Lifelines {
     });
 
     this.lifelines.fiftyFifty.addEventListener('click', this.fiftyFifty);
+    this.lifelines.askTheAudience.addEventListener('click', this.askTheAudience);
   };
 
   fiftyFifty = e => {
-    e.currentTarget.removeEventListener('click', this.fiftyFifty);
-    e.currentTarget.setAttribute('src', 'img/circles/circle1-not.png');
-    document.querySelector(`.lifeline:nth-child(1):hover`).style.width = '25%';
-    document.querySelector(`.lifeline:nth-child(1):hover`).style.cursor = 'default';
+    this.deactivateLifeline(e, this.fiftyFifty, 1);
     this.audio.play('fiftyFifty');
 
     let badAnswers = this.questions.getBadAnswers();
@@ -42,11 +40,27 @@ class Lifelines {
       answer.content.style.opacity = 0;
     });
   };
+
+  askTheAudience = e => {
+    this.deactivateLifeline(e, this.askTheAudience, 2);
+    this.audio.playAudience(0, 1000, () => {
+      this.audio.playAudience(1, 2000, () => {
+        this.audio.playAudience(2, 300, () => {
+          _.map(this.questions.answers, (answer, key) => {
+            answer.content.innerText +=
+              key === this.questions.currentQuestion.correctAns ? ' 100%' : ' 0%';
+          });
+        });
+      });
+    });
+  };
+
+  deactivateLifeline = (e, func, number) => {
+    e.currentTarget.removeEventListener('click', func);
+    e.currentTarget.setAttribute('src', `img/circles/circle${number}-not.png`);
+    document.querySelector(`.lifeline:nth-child(${number}):hover`).style.width = '25%';
+    document.querySelector(`.lifeline:nth-child(${number}):hover`).style.cursor = 'default';
+  };
 }
 
 export default Lifelines;
-
-// const { circles, fiftyFifty, askTheAudience, phoneAFriend } = this.lifelines;
-// circles[0].addEventListener('click', e => fiftyFifty(e, this.questions));
-// circles[1].addEventListener('click', e => askTheAudience(e, this.questions));
-// circles[2].addEventListener('click', phoneAFriend);

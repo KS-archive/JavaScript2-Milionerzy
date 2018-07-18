@@ -78,6 +78,11 @@ class AudioPlayer {
       clearInterval(interval);
     }, 2500);
   };
+
+  playAudience = (index, delay, callback) => {
+    this.sounds.askTheAudience[index].play();
+    setTimeout(callback, delay);
+  };
 }
 
 export default AudioPlayer;
