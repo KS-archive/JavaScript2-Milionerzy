@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import AudioPlayer from './AudioPlayer';
 
 class Questions {
@@ -46,14 +47,13 @@ class Questions {
 
   selectAnswer = e => {
     if (e.currentTarget.classList.contains('answerChecked')) {
-      Object.keys(this.answers).map(key => {
-        this.answers[key].container.removeEventListener('click', this.selectAnswer);
-      });
+      _.map(this.answers, answer =>
+        answer.container.removeEventListener('click', this.selectAnswer),
+      );
+
       this.checkAnswer(e.currentTarget.id);
     } else {
-      Object.keys(this.answers).map(key => {
-        this.answers[key].container.setAttribute('class', 'answer');
-      });
+      _.map(this.answers, answer => answer.container.setAttribute('class', 'answer'));
       e.currentTarget.classList.add('answerChecked');
     }
   };
