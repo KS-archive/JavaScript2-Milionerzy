@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import AudioPlayer from './AudioPlayer';
+import Rewards from './Rewards';
 
 class Questions {
   constructor(questions) {
@@ -30,6 +31,7 @@ class Questions {
     this.questionsList = questions;
     this.currentQuestionIndex = 0;
     this.audio = new AudioPlayer();
+    this.rewards = new Rewards();
   }
 
   askQuestion = () => {
@@ -42,6 +44,7 @@ class Questions {
     });
 
     this.currentQuestionIndex++;
+    this.rewards.highlight(this.currentQuestionIndex);
     this.audio.playBackgroundMusic();
   };
 
