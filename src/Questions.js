@@ -37,10 +37,29 @@ class Questions {
     this.question.innerText = this.currentQuestion.question;
     Object.keys(this.answers).map(key => {
       this.answers[key].content.innerText = this.currentQuestion[key];
+      this.answers[key].container.addEventListener('click', this.selectAnswer);
     });
 
     this.currentQuestionIndex++;
     this.audio.playBackgroundMusic();
+  };
+
+  selectAnswer = e => {
+    if (e.currentTarget.classList.contains('answerChecked')) {
+      Object.keys(this.answers).map(key => {
+        this.answers[key].container.removeEventListener('click', this.selectAnswer);
+      });
+      this.checkAnswer(e.currentTarget.id);
+    } else {
+      Object.keys(this.answers).map(key => {
+        this.answers[key].container.setAttribute('class', 'answer');
+      });
+      e.currentTarget.classList.add('answerChecked');
+    }
+  };
+
+  checkAnswer = id => {
+    console.log(id);
   };
 }
 
