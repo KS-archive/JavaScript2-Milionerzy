@@ -59,7 +59,24 @@ class Questions {
   };
 
   checkAnswer = id => {
-    console.log(id);
+    const correctAnswer = this.answers[this.currentQuestion.correctAns];
+    correctAnswer.container.classList.remove('answerChecked');
+    correctAnswer.container.classList.add('answerCorrect');
+
+    if (id === this.currentQuestion.correctAns) {
+      if (this.currentQuestionIndex !== 12) {
+        window.setTimeout(this.prepareToNextQuestion, 3000);
+      } else {
+        alert('You win!');
+      }
+    } else {
+      alert('You loose');
+    }
+  };
+
+  prepareToNextQuestion = () => {
+    _.map(this.answers, answer => answer.container.setAttribute('class', 'answer'));
+    this.askQuestion();
   };
 }
 
