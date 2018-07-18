@@ -1,9 +1,10 @@
 import _ from 'lodash';
+import Toastify from 'toastify-js';
 import AudioPlayer from './AudioPlayer';
 import Rewards from './Rewards';
 
 class Questions {
-  constructor(questions) {
+  constructor(questions, endGameNotification) {
     this.question = document.querySelector('#question');
     this.answers = {
       a: {
@@ -29,6 +30,8 @@ class Questions {
     };
 
     this.questionsList = questions;
+    this.endGameNotification = endGameNotification;
+
     this.currentQuestionIndex = 0;
     this.audio = new AudioPlayer();
     this.rewards = new Rewards();
@@ -75,11 +78,11 @@ class Questions {
         window.setTimeout(this.prepareToNextQuestion, 7500);
       } else {
         this.audio.play('milion');
-        alert('You win!');
+        this.endGameNotification('Brawo! Wygrałeś 1 000 000 zł!');
       }
     } else {
       this.audio.play('badAns');
-      alert('You loose');
+      this.endGameNotification('Niestaty tym razem przegrałeś');
     }
   };
 

@@ -99,6 +99,10 @@ class AudioPlayer {
       });
     }, 1000);
   };
+
+  pauseAllAudio = () => {
+    document.querySelectorAll('audio').forEach(audio => audio.pause());
+  };
 }
 
 export default AudioPlayer;
