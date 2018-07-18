@@ -83,6 +83,22 @@ class AudioPlayer {
     this.sounds.askTheAudience[index].play();
     setTimeout(callback, delay);
   };
+
+  playPhoneLifeline = () => {
+    const [phone1, phone2, phone3] = this.sounds.phoneAFriend;
+    phone1.play();
+    setTimeout(() => {
+      phone2.loop = true;
+      phone2.play();
+      document.querySelector('body').addEventListener('click', () => {
+        phone2.pause();
+        if (!!phone3) {
+          phone3.play();
+          setTimeout(() => phone3.pause(), 1000);
+        }
+      });
+    }, 1000);
+  };
 }
 
 export default AudioPlayer;

@@ -26,6 +26,7 @@ class Lifelines {
 
     this.lifelines.fiftyFifty.addEventListener('click', this.fiftyFifty);
     this.lifelines.askTheAudience.addEventListener('click', this.askTheAudience);
+    this.lifelines.phoneAFriend.addEventListener('click', this.phoneAFriend);
   };
 
   fiftyFifty = e => {
@@ -53,6 +54,11 @@ class Lifelines {
         });
       });
     });
+  };
+
+  phoneAFriend = e => {
+    this.deactivateLifeline(e, this.phoneAFriend, 3);
+    this.audio.playPhoneLifeline();
   };
 
   deactivateLifeline = (e, func, number) => {
